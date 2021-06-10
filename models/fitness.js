@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //defining my schema
-const fitnessTracker = new Schema({
+//done
+const fitnessSchema = new Schema({
   day: {
     type: Date,
     default: () => new Date(),
@@ -40,6 +41,6 @@ const fitnessTracker = new Schema({
   ],
 });
 
-const Fitness = mongoose.model("Fitness", fitnessTracker);
+const Fitness = mongoose.model("./Fitness", fitnessSchema);
 
 module.exports = Fitness;

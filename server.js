@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-var MONGO_FITNESS = process.env.MONGO_FITNESS || "mongodb://localhost/workout";
+const MONGO_FITNESS =
+  process.env.MONGO_FITNESS || "mongodb://localhost/workout";
 mongoose.connect(MONGO_FITNESS, {
   //allows users to fall back on old parser if a bug is found in new one
   useNewUrlParser: true,
