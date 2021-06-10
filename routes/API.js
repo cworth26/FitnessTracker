@@ -1,15 +1,15 @@
-const Fitness = require("../models/fitness");
+const router = require("express").Router();
+const database = require("../models");
 
-// module.exports = function (app) {
-//   app.get("/api/fitness", function (req, res) {
-//     //calling on the Fitness data info and waiting on promise to return data into JSON (readable)
-//     Fitness.find()
-//       .then((data) => {
-//         res.json(data);
-//       })
-//       //catch error and display if there is one
-//       .catch((err) => {
-//         res.json(err);
-//       });
-//   });
-// };
+//request for getting ALL workouts
+
+router.get("/api/workouts", (req, res) => {
+  database.Fitness.find()
+    .then((workout) => {
+      res.status(200).json(workout);
+    })
+    //if there is an error, it will display
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+});
