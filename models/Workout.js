@@ -40,7 +40,7 @@ const workoutSchema = new Schema({
     },
   ],
 });
-
+//virtual will not actually exist in the mongo database
 workoutSchema.virtual("totalDuration").get(function () {
   return this.exercises.reduct((total, exercise) => {
     return total + exercise.duration;
