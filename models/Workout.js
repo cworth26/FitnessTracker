@@ -27,7 +27,7 @@ const workoutSchema = new Schema(
         },
         weight: {
           type: Number,
-          required: "Enter Current Weight",
+          // required: "Enter Current Weight",
         },
         sets: {
           type: Number,
