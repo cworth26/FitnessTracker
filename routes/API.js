@@ -6,16 +6,8 @@ const { Workout } = database;
 //request for getting ALL workouts
 router.get("/api/workouts", (req, res) => {
   Workout.find({})
-    .then((Workout) => {
-      Workout.forEach((workout) => {
-        var total = 0;
-        workout.exercises.forEach((e) => {
-          total += e.duration;
-        });
-        workout.totalDuration = total;
-      });
-
-      res.json(Workout);
+    .then((workouts) => {
+      res.json(workouts);
     })
     //if there is an error, it will display
     .catch((err) => {
